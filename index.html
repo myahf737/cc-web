@@ -702,12 +702,21 @@
     }
 
     .about-stat {
+      position: relative;
       min-height: 144px;
       padding: 34px 24px;
       border-radius: 8px;
       border: 1px solid var(--line);
       background: var(--white);
       text-align: center;
+      transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .about-stat:hover,
+    .about-stat:focus-within {
+      background: var(--ivory);
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
     }
 
     .about-stat strong {
@@ -728,6 +737,24 @@
       letter-spacing: 0.13em;
       line-height: 1.5;
       text-transform: uppercase;
+    }
+
+    .about-stat-detail {
+      max-height: 0;
+      margin: 0;
+      opacity: 0;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      transition: max-height 220ms ease, margin 220ms ease, opacity 180ms ease;
+    }
+
+    .about-stat:hover .about-stat-detail,
+    .about-stat:focus-within .about-stat-detail {
+      max-height: 90px;
+      margin-top: 16px;
+      opacity: 1;
     }
 
     .closing {
@@ -1127,21 +1154,25 @@
       </div>
 
       <div class="about-stats" aria-label="Experience highlights">
-        <div class="about-stat">
+        <div class="about-stat" tabindex="0">
           <strong>20+</strong>
           <span>Years of Operational Leadership</span>
+          <p class="about-stat-detail">Beginning in 2000 at The Builders Exchange Rochester, NY.</p>
         </div>
-        <div class="about-stat">
+        <div class="about-stat" tabindex="0">
           <strong>4</strong>
           <span>Core Industries Served</span>
+          <p class="about-stat-detail">Design-Build, Residential construction, Interior design, Service industry B2C environments.</p>
         </div>
-        <div class="about-stat">
+        <div class="about-stat" tabindex="0">
           <strong>20+</strong>
           <span>Person Teams Led</span>
+          <p class="about-stat-detail">Experience supporting internal and field teams where timelines, clients, money, and decisions move at once.</p>
         </div>
-        <div class="about-stat">
+        <div class="about-stat" tabindex="0">
           <strong>$M+</strong>
           <span>Revenue Operations Supported</span>
+          <p class="about-stat-detail">A practical lens for spotting margin pressure, rework, and capacity leaks.</p>
         </div>
       </div>
     </section>
