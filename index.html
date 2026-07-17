@@ -842,9 +842,20 @@
       transition: max-height 240ms ease, margin 240ms ease, opacity 180ms ease;
     }
 
+    .service-expanded p {
+      margin: 0;
+    }
+
+    .service-expanded ul {
+      display: grid;
+      gap: 7px;
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+
     .service-card:hover .service-expanded,
     .service-card:focus-within .service-expanded {
-      max-height: 220px;
+      max-height: 420px;
       margin-top: 16px;
       opacity: 1;
     }
@@ -1251,14 +1262,14 @@
         <div class="service-list">
           <article class="service-card" tabindex="0">
             <div>
-              <h3>LEAP Sprint</h3>
-              <p class="fit">For founder-led businesses</p>
+              <h3>The LEAP Engagement</h3>
+              <p class="fit">Quarterly engagement</p>
             </div>
             <div>
               <p class="service-summary">A quarterly 90 day engagement for founder-led businesses that need focused clarity around one immediate pressure point.</p>
-              <p class="service-expanded">Best for a business that needs to identify what matters now, clarify the next operational move, and create a practical plan without turning the work into a scattered overhaul.</p>
+              <p class="service-expanded">LEAP identifies the operational breakpoint creating the most pressure, defines the priority and desired future state, builds the solution required to address it, and supports implementation, ownership, and operating rhythm so the business leaves with a sustainable path forward.</p>
             </div>
-            <button type="button" aria-label="Read more about LEAP Sprint">+</button>
+            <button type="button" aria-label="Read more about The LEAP Engagement">+</button>
           </article>
 
           <article class="service-card" tabindex="0">
@@ -1267,8 +1278,19 @@
               <p class="fit">For longer-term partnership</p>
             </div>
             <div>
-              <p class="service-summary">For growing or scaling businesses that need a longer-term strategic operating partner.</p>
-              <p class="service-expanded">Best for businesses navigating complexity, financial visibility, leadership decisions, team structure, and sustainable execution over time.</p>
+              <p class="service-summary">For growing or scaling businesses that need steady operational leadership, decision support, and implementation oversight during seasons of complexity.</p>
+              <div class="service-expanded">
+                <p><strong>This is for clients who need:</strong></p>
+                <ul>
+                  <li>Ongoing fractional operations leadership</li>
+                  <li>Cross-functional oversight</li>
+                  <li>Leadership team support</li>
+                  <li>Decision-making partnership</li>
+                  <li>Implementation management</li>
+                  <li>Interim operational leadership</li>
+                  <li>Support during growth, transition, restructuring, or executive absence</li>
+                </ul>
+              </div>
             </div>
             <button type="button" aria-label="Read more about Strategic Operations Advisory">+</button>
           </article>
