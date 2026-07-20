@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Founder Freedom Assessment | Conscious Command</title>
+  <meta name="description" content="Seven honest questions to reveal what is keeping you in the center of the business and the leadership shift that can create more freedom." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#172b27" />
+  <link rel="icon" href="CC-logo-deep-green.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --ivory: #f9f7ef;
+      --white: #fffdf8;
+      --ink: #0b1513;
+      --green: #172b27;
+      --sage: #4d5f55;
+      --stone: #cfc39f;
+      --line: rgba(249, 247, 239, 0.15);
+      --serif: "Bodoni 72", Didot, "Iowan Old Style", Georgia, serif;
+      --sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--green);
+    }
+
+    body {
+      min-height: 100%;
+      margin: 0;
+      background: var(--green);
+      color: var(--ivory);
+      font-family: var(--sans);
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .assessment-shell {
+      position: relative;
+      min-height: 100svh;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(207, 195, 159, 0.13), transparent 34rem),
+        radial-gradient(circle at 88% 74%, rgba(77, 95, 85, 0.32), transparent 36rem),
+        linear-gradient(145deg, var(--green) 0%, var(--green) 58%, var(--sage) 100%);
+    }
+
+    .assessment-shell::before,
+    .assessment-shell::after {
+      position: fixed;
+      z-index: -1;
+      border: 1px solid rgba(207, 195, 159, 0.13);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .assessment-shell::before {
+      top: -22rem;
+      right: -10rem;
+      width: 34rem;
+      height: 34rem;
+    }
+
+    .assessment-shell::after {
+      bottom: -14rem;
+      left: -9rem;
+      width: 22rem;
+      height: 22rem;
+    }
+
+    .brand-bar {
+      display: flex;
+      width: min(100% - 44px, 860px);
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(249, 247, 239, 0.14);
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      padding: 8px 0;
+      border: 0;
+      background: transparent;
+      color: var(--ivory);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: 0.2em;
+      line-height: 1;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--ivory);
+      box-shadow: 0 0 0 5px rgba(249, 247, 239, 0.06);
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .brand-note {
+      color: rgba(249, 247, 239, 0.58);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .panel {
+      width: min(100% - 44px, 720px);
+      margin: 0 auto;
+      padding: clamp(58px, 9vw, 104px) 0 72px;
+    }
+
+    .intro {
+      display: flex;
+      min-height: calc(100svh - 82px);
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 38px;
+      text-align: center;
+    }
+
+    .eyebrow,
+    .topic,
+    .card-label {
+      margin: 0;
+      color: var(--stone);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .intro h1,
+    .question h1,
+    .result h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.06;
+    }
+
+    .intro h1 {
+      max-width: 680px;
+      margin: 27px auto 20px;
+      font-size: clamp(44px, 7.6vw, 76px);
+    }
+
+    h1 em {
+      color: var(--stone);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .lede {
+      max-width: 610px;
+      margin: 0 auto;
+      color: rgba(249, 247, 239, 0.72);
+      font-size: clamp(17px, 2.2vw, 20px);
+      line-height: 1.7;
+    }
+
+    .promise-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 34px auto 28px;
+      color: rgba(249, 247, 239, 0.58);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .promise-row i {
+      width: 3px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--stone);
+    }
+
+    .primary-button {
+      display: flex;
+      width: min(100%, 520px);
+      min-height: 62px;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      border: 1px solid var(--stone);
+      background: var(--stone);
+      color: var(--green);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+    }
+
+    .primary-button:hover {
+      border-color: var(--ivory);
+      background: var(--ivory);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .primary-button:focus-visible,
+    .answer:focus-visible,
+    .back-button:focus-visible,
+    .text-button:focus-visible,
+    .wordmark:focus-visible {
+      outline: 3px solid var(--ivory);
+      outline-offset: 3px;
+    }
+
+    .fine-print {
+      margin: 18px 0 0;
+      color: rgba(249, 247, 239, 0.42);
+      font-size: 12px;
+    }
+
+    .progress-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .progress-head span {
+      color: rgba(249, 247, 239, 0.5);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .progress-track {
+      height: 1px;
+      margin: 18px 0 52px;
+      background: rgba(249, 247, 239, 0.14);
+    }
+
+    .progress-track span {
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--stone);
+      box-shadow: 0 0 16px rgba(207, 195, 159, 0.5);
+      transition: width 300ms ease;
+    }
+
+    .topic {
+      margin-bottom: 18px;
+      color: rgba(249, 247, 239, 0.48);
+    }
+
+    .question h1 {
+      max-width: 660px;
+      margin-bottom: 40px;
+      font-size: clamp(35px, 5.4vw, 54px);
+    }
+
+    .answers {
+      display: grid;
+      gap: 12px;
+    }
+
+    .answer {
+      display: grid;
+      width: 100%;
+      min-height: 88px;
+      grid-template-columns: 28px 1fr;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 24px;
+      border: 1px solid rgba(249, 247, 239, 0.15);
+      background: linear-gradient(115deg, rgba(255, 253, 248, 0.075), rgba(255, 253, 248, 0.025));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025), 0 10px 30px rgba(0, 0, 0, 0.04);
+      color: rgba(249, 247, 239, 0.78);
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: left;
+      transition: background 150ms ease, border 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+    }
+
+    .answer:hover,
+    .answer.selected {
+      border-color: var(--stone);
+      background: rgba(207, 195, 159, 0.12);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.14);
+      transform: translateX(3px);
+    }
+
+    .answer-label {
+      color: var(--stone);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .back-button,
+    .text-button {
+      border: 0;
+      background: transparent;
+      color: rgba(249, 247, 239, 0.48);
+      cursor: pointer;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .back-button {
+      margin-top: 34px;
+      padding: 12px 0;
+    }
+
+    .result {
+      max-width: 680px;
+    }
+
+    .result h1 {
+      margin: 24px 0 22px;
+      color: var(--stone);
+      font-size: clamp(42px, 6.5vw, 66px);
+    }
+
+    .result-summary,
+    .offer-intro {
+      color: rgba(249, 247, 239, 0.88);
+      font-family: var(--serif);
+      font-size: clamp(19px, 2.5vw, 23px);
+      line-height: 1.55;
+    }
+
+    .diagnosis-card,
+    .next-step {
+      margin: 34px 0 0;
+      padding: 27px 28px;
+      border: 1px solid var(--line);
+      background: linear-gradient(120deg, rgba(255, 253, 248, 0.085), rgba(255, 253, 248, 0.035));
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.09);
+    }
+
+    .diagnosis-card p:last-child,
+    .next-step p:last-child {
+      margin: 13px 0 0;
+      color: rgba(249, 247, 239, 0.7);
+      line-height: 1.65;
+    }
+
+    .next-step {
+      border-left: 3px solid var(--stone);
+    }
+
+    .offer-intro {
+      margin: 38px 0 28px;
+      font-size: 20px;
+    }
+
+    .result .primary-button {
+      margin-left: 0;
+    }
+
+    .text-button {
+      display: block;
+      margin: 24px auto 0;
+      padding: 12px;
+    }
+
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .brand-bar {
+        width: calc(100% - 36px);
+        min-height: 68px;
+      }
+
+      .brand-note {
+        display: none;
+      }
+
+      .panel {
+        width: calc(100% - 36px);
+        padding: 44px 0 52px;
+      }
+
+      .intro {
+        min-height: calc(100svh - 68px);
+        padding-top: 22px;
+      }
+
+      .intro h1 {
+        margin-top: 20px;
+      }
+
+      .lede {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .promise-row {
+        gap: 8px;
+        margin: 27px 0 24px;
+        font-size: 9px;
+        letter-spacing: 0.08em;
+      }
+
+      .primary-button {
+        min-height: 58px;
+        padding-inline: 16px;
+        font-size: 11px;
+      }
+
+      .progress-track {
+        margin-bottom: 38px;
+      }
+
+      .question h1 {
+        margin-bottom: 30px;
+      }
+
+      .answer {
+        min-height: 78px;
+        grid-template-columns: 22px 1fr;
+        gap: 12px;
+        padding: 16px 15px;
+        font-size: 15px;
+      }
+
+      .diagnosis-card,
+      .next-step {
+        padding: 22px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="assessment-shell">
+    <header class="brand-bar">
+      <button class="wordmark" type="button" data-restart aria-label="Return to the beginning">
+        <img class="brand-logo" src="CC-logo-deep-green.svg" alt="" />
+        <span class="brand-name"><span>Conscious</span><span>Command</span></span>
+      </button>
+      <span class="brand-note">Leadership, designed to hold.</span>
+    </header>
+
+    <section class="intro panel screen active" id="intro-screen" aria-labelledby="intro-title">
+      <p class="eyebrow">The founder freedom assessment</p>
+      <h1 id="intro-title">What is your business <em>asking of you?</em></h1>
+      <p class="lede">Seven honest questions to reveal what is keeping you in the center of the business and the leadership shift that will create your next level of freedom.</p>
+      <div class="promise-row" aria-label="Assessment details">
+        <span>7 questions</span><i aria-hidden="true"></i><span>2 minutes</span><i aria-hidden="true"></i><span>Immediate insight</span>
+      </div>
+      <button class="primary-button" type="button" id="start-button">Begin the assessment</button>
+      <p class="fine-print">No perfect answers. Choose what is true today.</p>
+    </section>
+
+    <section class="question panel screen" id="question-screen" aria-labelledby="question-title">
+      <div class="progress-head">
+        <p class="eyebrow" id="question-count">Question 01</p>
+        <span id="question-total">1 of 7</span>
+      </div>
+      <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+      <p class="topic" id="question-topic"></p>
+      <h1 id="question-title"></h1>
+      <div class="answers" id="answers"></div>
+      <button class="back-button" type="button" id="back-button">Back</button>
+    </section>
+
+    <section class="result panel screen" id="result-screen" aria-live="polite">
+      <p class="eyebrow" id="result-label">Your result</p>
+      <h1 id="result-title"></h1>
+      <p class="result-summary" id="result-summary"></p>
+      <div class="diagnosis-card">
+        <p class="card-label">The real constraint</p>
+        <p id="result-truth"></p>
+      </div>
+      <div class="next-step">
+        <p class="card-label">What we would work on together</p>
+        <p id="result-focus"></p>
+      </div>
+      <p class="offer-intro">You do not have to solve the business while you are still trapped inside its day-to-day demands.</p>
+      <a class="primary-button" href="https://api.leadconnectorhq.com/widget/bookings/30-minute-consultation-xcf7v">Explore working together</a>
+      <button class="text-button" type="button" data-restart>Retake the assessment</button>
+    </section>
+  </main>
+
+  <script>
+    const questions = [
+      {
+        eyebrow: "Pressure and priorities",
+        prompt: "When the week goes sideways, what gets your attention first?",
+        answers: [
+          { label: "A", text: "Whatever is loudest. I spend the day putting out fires.", score: 1 },
+          { label: "B", text: "Client needs come first, so my own priorities get pushed again.", score: 2 },
+          { label: "C", text: "I work the plan, but urgent issues still pull me off course.", score: 3 },
+          { label: "D", text: "I know what matters, delegate the rest, and protect the priority.", score: 4 }
+        ]
+      },
+      {
+        eyebrow: "Decision-making",
+        prompt: "What happens when your team needs a meaningful decision from you?",
+        answers: [
+          { label: "A", text: "They wait or guess, and I usually clean it up later.", score: 1 },
+          { label: "B", text: "They message me, even when I'm supposed to be unavailable.", score: 2 },
+          { label: "C", text: "They handle the obvious calls but hesitate on anything new.", score: 3 },
+          { label: "D", text: "They use clear principles and know what they own.", score: 4 }
+        ]
+      },
+      {
+        eyebrow: "Capacity",
+        prompt: "If demand jumped by 30% next month, what would happen?",
+        answers: [
+          { label: "A", text: "Honestly? Something would break, and it might be me.", score: 1 },
+          { label: "B", text: "We would deliver, but quality or sanity would take the hit.", score: 2 },
+          { label: "C", text: "We could absorb it for a while, but not sustainably.", score: 3 },
+          { label: "D", text: "We have the people and operating rhythm to support it.", score: 4 }
+        ]
+      },
+      {
+        eyebrow: "Leadership",
+        prompt: "Which sentence sounds most like your role right now?",
+        answers: [
+          { label: "A", text: "I am the glue holding nearly everything together.", score: 1 },
+          { label: "B", text: "I lead, but I'm still buried in execution.", score: 2 },
+          { label: "C", text: "I'm stepping into strategy, but the business still pulls me back.", score: 3 },
+          { label: "D", text: "I set direction, and the team confidently drives the work.", score: 4 }
+        ]
+      },
+      {
+        eyebrow: "Visibility",
+        prompt: "How quickly can you tell what is working and what is not?",
+        answers: [
+          { label: "A", text: "Usually when a problem becomes impossible to ignore.", score: 1 },
+          { label: "B", text: "I have the information, but it lives in too many places.", score: 2 },
+          { label: "C", text: "I track the basics, though the full picture is still fuzzy.", score: 3 },
+          { label: "D", text: "The right measures make our priorities and problems visible.", score: 4 }
+        ]
+      },
+      {
+        eyebrow: "Freedom",
+        prompt: "When did you last fully unplug from the business?",
+        answers: [
+          { label: "A", text: "I genuinely cannot remember.", score: 1 },
+          { label: "B", text: "I leave, but I keep checking in the entire time.", score: 2 },
+          { label: "C", text: "Recently, but the team still needed me for a few things.", score: 3 },
+          { label: "D", text: "Recently. The business ran well without me.", score: 4 }
+        ]
+      },
+      {
+        eyebrow: "The next chapter",
+        prompt: "What does growth feel like in your business right now?",
+        answers: [
+          { label: "A", text: "Heavy. More growth sounds like more problems.", score: 1 },
+          { label: "B", text: "Frustrating. We're working harder without gaining ground.", score: 2 },
+          { label: "C", text: "Promising, but fragile. Too much still depends on me.", score: 3 },
+          { label: "D", text: "Exciting, but I want an expert to pressure-test the foundation.", score: 4 }
+        ]
+      }
+    ];
+
+    const results = [
+      {
+        max: 11,
+        label: "Your result",
+        title: "You're carrying the business.",
+        summary: "The business is moving because you keep moving. That may look like commitment from the outside, but inside it feels like constant pressure, reactive decisions, and no clean way to step away.",
+        truth: "This is not a time-management problem. It is an operating model that has made you the system.",
+        focus: "Create immediate clarity around what only you should own, stabilize the most expensive pressure points, and build a leadership rhythm your team can actually follow."
+      },
+      {
+        max: 17,
+        label: "Your result",
+        title: "You've become the bottleneck.",
+        summary: "You have capable people and real momentum, but decisions, priorities, and quality still circle back to you. The company has outgrown an informal way of operating.",
+        truth: "Working harder will not unlock the next level. The constraint is how responsibility and authority move through the business.",
+        focus: "Turn expectations into clear ownership, install practical decision frameworks, and stop rescuing work your team can learn to lead."
+      },
+      {
+        max: 23,
+        label: "Your result",
+        title: "Your growth is promising, but fragile.",
+        summary: "The foundation is taking shape. Yet a surge, departure, or demanding season could still pull you back into the center of everything.",
+        truth: "You do not need more complexity. You need a leadership system strong enough to hold when conditions change.",
+        focus: "Strengthen accountability, sharpen the operating cadence, and close the gaps that quietly keep the business dependent on you."
+      },
+      {
+        max: 28,
+        label: "Your result",
+        title: "You're ready to lead beyond yourself.",
+        summary: "You have built more structure than most founders, but the next chapter demands a different level of leadership. What got the business here should not be left to chance as it grows.",
+        truth: "Your opportunity is not to fix a broken business. It is to intentionally design one that can scale without diluting your standards or consuming your life.",
+        focus: "Pressure-test the foundation, elevate your leadership team, and translate your vision into an operating model that can carry the next stage."
+      }
+    ];
+
+    const introScreen = document.querySelector("#intro-screen");
+    const questionScreen = document.querySelector("#question-screen");
+    const resultScreen = document.querySelector("#result-screen");
+    const startButton = document.querySelector("#start-button");
+    const backButton = document.querySelector("#back-button");
+    const questionCount = document.querySelector("#question-count");
+    const questionTotal = document.querySelector("#question-total");
+    const progressBar = document.querySelector("#progress-bar");
+    const questionTopic = document.querySelector("#question-topic");
+    const questionTitle = document.querySelector("#question-title");
+    const answersEl = document.querySelector("#answers");
+
+    let step = 0;
+    let answers = [];
+
+    function showScreen(screen) {
+      [introScreen, questionScreen, resultScreen].forEach((item) => item.classList.remove("active"));
+      screen.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderQuestion() {
+      const question = questions[step];
+      questionCount.textContent = `Question ${String(step + 1).padStart(2, "0")}`;
+      questionTotal.textContent = `${step + 1} of ${questions.length}`;
+      progressBar.style.width = `${((step + 1) / questions.length) * 100}%`;
+      questionTopic.textContent = question.eyebrow;
+      questionTitle.textContent = question.prompt;
+      answersEl.innerHTML = "";
+
+      question.answers.forEach((answer) => {
+        const button = document.createElement("button");
+        button.className = answers[step] === answer.score ? "answer selected" : "answer";
+        button.type = "button";
+        button.innerHTML = `<span class="answer-label">${answer.label}</span><span>${answer.text}</span>`;
+        button.addEventListener("click", () => choose(answer.score));
+        answersEl.appendChild(button);
+      });
+    }
+
+    function choose(score) {
+      answers = answers.slice(0, step);
+      answers[step] = score;
+
+      window.setTimeout(() => {
+        if (step === questions.length - 1) {
+          renderResult();
+          showScreen(resultScreen);
+        } else {
+          step += 1;
+          renderQuestion();
+        }
+      }, 180);
+    }
+
+    function renderResult() {
+      const total = answers.reduce((sum, value) => sum + value, 0);
+      const result = results.find((item) => total <= item.max) || results[results.length - 1];
+      document.querySelector("#result-label").textContent = result.label;
+      document.querySelector("#result-title").textContent = result.title;
+      document.querySelector("#result-summary").textContent = result.summary;
+      document.querySelector("#result-truth").textContent = result.truth;
+      document.querySelector("#result-focus").textContent = result.focus;
+    }
+
+    function restart() {
+      step = 0;
+      answers = [];
+      showScreen(introScreen);
+    }
+
+    function startAssessment() {
+      step = 0;
+      answers = [];
+      renderQuestion();
+      showScreen(questionScreen);
+    }
+
+    startButton.addEventListener("click", startAssessment);
+
+    backButton.addEventListener("click", () => {
+      if (step === 0) {
+        restart();
+      } else {
+        step -= 1;
+        renderQuestion();
+      }
+    });
+
+    document.querySelectorAll("[data-restart]").forEach((button) => {
+      button.addEventListener("click", restart);
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("start") === "1" || window.location.hash === "#questions") {
+      startAssessment();
+    }
+  </script>
+</body>
+</html>
