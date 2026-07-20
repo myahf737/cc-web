@@ -872,12 +872,46 @@
       line-height: 1.7;
     }
 
+    .services-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.12fr);
+      align-items: stretch;
+      gap: clamp(28px, 5vw, 64px);
+    }
+
+    .engagement-visual {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--ivory);
+      box-shadow: 0 20px 60px rgba(23, 43, 39, 0.1);
+    }
+
+    .engagement-visual::before {
+      position: absolute;
+      inset: -18px;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(249, 247, 239, 0.14), rgba(249, 247, 239, 0.04)),
+        url("conscious-command-social-share.jpg") center / cover no-repeat;
+      filter: saturate(0.72) contrast(0.9);
+    }
+
+    .engagement-visual::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(180deg, rgba(249, 247, 239, 0), rgba(23, 43, 39, 0.1)),
+        linear-gradient(90deg, rgba(249, 247, 239, 0.08), rgba(249, 247, 239, 0));
+    }
+
     .service-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
-      max-width: 860px;
-      margin: 0 auto;
+      margin: 0;
     }
 
     .service-card {
@@ -1141,7 +1175,7 @@
       .method-header,
       .about,
       .assessment-inner,
-      .service-list {
+      .services-layout {
         grid-template-columns: 1fr;
       }
 
@@ -1156,6 +1190,10 @@
 
       .hero-image {
         min-height: calc(100vh - 89px);
+      }
+
+      .engagement-visual {
+        min-height: 420px;
       }
 
       .hero-title-line {
@@ -1220,6 +1258,14 @@
 
       .hero-image {
         min-height: 480px;
+      }
+
+      .engagement-visual {
+        min-height: 340px;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
       }
 
       .service-card {
@@ -1405,41 +1451,45 @@
         <h2 id="services-title">How We Work Together</h2>
         <p class="services-lede">Each engagement gives founders access to senior operational perspective without adding headcount.</p>
 
-        <div class="service-list">
-          <article class="service-card" tabindex="0">
-            <div>
-              <h3>The LEAP Engagement</h3>
-              <p class="fit">Quarterly engagement</p>
-            </div>
-            <div>
-              <p class="service-summary">A quarterly 90 day engagement for founder-led businesses that need focused clarity around one immediate pressure point.</p>
-              <p class="service-expanded">LEAP identifies the operational breakpoint creating the most pressure, defines the priority and desired future state, builds the solution required to address it, and supports implementation, ownership, and operating rhythm so the business leaves with a sustainable path forward.</p>
-            </div>
-            <button type="button" aria-label="Read more about The LEAP Engagement">+</button>
-          </article>
+        <div class="services-layout">
+          <div class="engagement-visual" aria-label="Conscious Command editorial logo image"></div>
 
-          <article class="service-card" tabindex="0">
-            <div>
-              <h3>Strategic Operations Advisory</h3>
-              <p class="fit">For longer-term partnership</p>
-            </div>
-            <div>
-              <p class="service-summary">For growing or scaling businesses that need steady operational leadership, decision support, and implementation oversight during seasons of complexity.</p>
-              <div class="service-expanded">
-                <p><strong>This is for clients who need:</strong></p>
-                <ul>
-                  <li>Ongoing fractional operations leadership</li>
-                  <li>Cross-functional oversight</li>
-                  <li>Leadership team support</li>
-                  <li>Decision-making partnership</li>
-                  <li>Implementation management</li>
-                  <li>Interim operational leadership</li>
-                  <li>Support during growth, transition, restructuring, or executive absence</li>
-                </ul>
+          <div class="service-list">
+            <article class="service-card" tabindex="0">
+              <div>
+                <h3>The LEAP Engagement</h3>
+                <p class="fit">Quarterly engagement</p>
               </div>
-            </div>
-            <button type="button" aria-label="Read more about Strategic Operations Advisory">+</button>
-          </article>
+              <div>
+                <p class="service-summary">A quarterly 90 day engagement for founder-led businesses that need focused clarity around one immediate pressure point.</p>
+                <p class="service-expanded">LEAP identifies the operational breakpoint creating the most pressure, defines the priority and desired future state, builds the solution required to address it, and supports implementation, ownership, and operating rhythm so the business leaves with a sustainable path forward.</p>
+              </div>
+              <button type="button" aria-label="Read more about The LEAP Engagement">+</button>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div>
+                <h3>Strategic Operations Advisory</h3>
+                <p class="fit">For longer-term partnership</p>
+              </div>
+              <div>
+                <p class="service-summary">For growing or scaling businesses that need steady operational leadership, decision support, and implementation oversight during seasons of complexity.</p>
+                <div class="service-expanded">
+                  <p><strong>This is for clients who need:</strong></p>
+                  <ul>
+                    <li>Ongoing fractional operations leadership</li>
+                    <li>Cross-functional oversight</li>
+                    <li>Leadership team support</li>
+                    <li>Decision-making partnership</li>
+                    <li>Implementation management</li>
+                    <li>Interim operational leadership</li>
+                    <li>Support during growth, transition, restructuring, or executive absence</li>
+                  </ul>
+                </div>
+              </div>
+              <button type="button" aria-label="Read more about Strategic Operations Advisory">+</button>
+            </article>
+          </div>
         </div>
       </div>
     </section>
