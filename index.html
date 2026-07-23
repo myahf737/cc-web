@@ -722,11 +722,58 @@
     .expect-outcome {
       min-height: 310px;
       padding: 30px clamp(24px, 3vw, 40px) 38px 0;
+      transition: background 180ms ease;
     }
 
     .expect-outcome + .expect-outcome {
       padding-left: clamp(24px, 3vw, 40px);
       border-left: 1px solid var(--line);
+    }
+
+    .expect-outcome.is-open {
+      background: rgba(255, 253, 248, 0.34);
+    }
+
+    .expect-toggle {
+      display: grid;
+      width: 100%;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .expect-toggle:focus {
+      outline: 0;
+    }
+
+    .expect-toggle-icon {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--sage);
+      font-size: 20px;
+      line-height: 1;
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .expect-toggle:focus-visible .expect-toggle-icon {
+      outline: 2px solid var(--stone);
+      outline-offset: 3px;
+    }
+
+    .expect-outcome.is-open .expect-toggle-icon {
+      background: var(--green);
+      color: var(--white);
+      transform: rotate(45deg);
     }
 
     .expect-number {
@@ -737,10 +784,13 @@
       font-size: 16px;
     }
 
-    .expect-outcome h3 {
+    .expect-title {
+      display: block;
       max-width: 300px;
       color: var(--green);
+      font-family: var(--serif);
       font-size: clamp(25px, 2.3vw, 34px);
+      font-weight: 500;
       line-height: 1.12;
     }
 
@@ -749,6 +799,27 @@
       color: rgba(11, 21, 19, 0.74);
       font-size: 15px;
       line-height: 1.68;
+    }
+
+    .expect-summary {
+      display: block;
+      margin-top: 18px;
+      color: rgba(11, 21, 19, 0.74);
+      font-size: 15px;
+      line-height: 1.68;
+    }
+
+    .expect-detail {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 260ms ease, opacity 180ms ease, padding 220ms ease;
+    }
+
+    .expect-outcome.is-open .expect-detail {
+      max-height: 440px;
+      opacity: 1;
+      padding-top: 2px;
     }
 
     .assessment {
@@ -861,38 +932,7 @@
     }
 
     .services-layout {
-      display: grid;
-      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.12fr);
-      align-items: stretch;
-      gap: clamp(28px, 5vw, 64px);
-    }
-
-    .engagement-visual {
-      position: relative;
-      min-height: 560px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--ivory);
-      box-shadow: 0 20px 60px rgba(23, 43, 39, 0.1);
-    }
-
-    .engagement-visual::before {
-      position: absolute;
-      inset: -18px;
-      content: "";
-      background:
-        linear-gradient(90deg, rgba(249, 247, 239, 0.14), rgba(249, 247, 239, 0.04)),
-        url("conscious-command-social-share.jpg") center / cover no-repeat;
-      filter: saturate(0.72) contrast(0.9);
-    }
-
-    .engagement-visual::after {
-      position: absolute;
-      inset: 0;
-      content: "";
-      background:
-        linear-gradient(180deg, rgba(249, 247, 239, 0), rgba(23, 43, 39, 0.1)),
-        linear-gradient(90deg, rgba(249, 247, 239, 0.08), rgba(249, 247, 239, 0));
+      display: block;
     }
 
     .service-list {
@@ -1231,10 +1271,6 @@
         min-height: calc(100vh - 89px);
       }
 
-      .engagement-visual {
-        min-height: 420px;
-      }
-
       .hero-title-line {
         white-space: normal;
       }
@@ -1299,10 +1335,6 @@
         min-height: 480px;
       }
 
-      .engagement-visual {
-        min-height: 340px;
-      }
-
       .service-list {
         grid-template-columns: 1fr;
       }
@@ -1315,23 +1347,30 @@
         white-space: normal;
       }
 
+      .method-header {
+        margin-bottom: 26px;
+      }
+
       .leap-workflow {
         grid-template-columns: 1fr;
-        gap: 22px;
+        gap: 14px;
       }
 
       .leap-diagram {
         width: calc(100% + 40px);
-        min-height: 440px;
+        height: 430px;
+        min-height: 430px;
         margin-left: -20px;
+        overflow: hidden;
       }
 
       .leap-diagram svg {
-        height: 440px;
+        height: 410px;
+        transform: translate(62px, -8px);
       }
 
       .leap-step {
-        padding: 22px 0;
+        padding: 18px 0;
       }
 
       .expect-outcomes {
@@ -1451,7 +1490,7 @@
         </div>
         <div class="about-body">
           <span class="section-label">About Myah</span>
-          <h2 id="about-title">Operations that work because the people inside them do.</h2>
+          <h2 id="about-title">I help make the business easier to lead, easier to run, and less dependent on you.</h2>
           <ul class="about-points">
             <li>More than 20 years inside founder-led businesses.</li>
             <li>Operational leadership across project-based environments.</li>
@@ -1494,8 +1533,6 @@
         <p class="services-lede">Each engagement gives founders access to senior operational perspective without adding headcount.</p>
 
         <div class="services-layout">
-          <div class="engagement-visual" aria-label="Conscious Command editorial logo image"></div>
-
           <div class="service-list">
             <article class="service-card" tabindex="0">
               <div>
@@ -1625,27 +1662,48 @@
 
         <div class="expect-outcomes">
           <article class="expect-outcome">
-            <span class="expect-number">01</span>
-            <h3>Fewer dropped balls.</h3>
-            <p>We clean up the gaps between people, priorities, systems, and follow-through so work moves with less confusion and fewer repeated breakdowns.</p>
-            <p><strong>What this can look like:</strong> clearer ownership, cleaner handoffs, fewer missed details, stronger follow-through, better lead flow visibility, and less time spent chasing the same issues.</p>
-            <p><strong>KPI examples:</strong> lead response time, lead conversion, proposal conversion, marketing activity review, missed handoffs, and completed action items.</p>
+            <button class="expect-toggle" type="button" aria-expanded="false" aria-controls="outcome-detail-1">
+              <span>
+                <span class="expect-number">01</span>
+                <span class="expect-title">Fewer dropped balls.</span>
+                <span class="expect-summary">We clean up the gaps between people, priorities, systems, and follow-through so work moves with less confusion and fewer repeated breakdowns.</span>
+              </span>
+              <span class="expect-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="expect-detail" id="outcome-detail-1">
+              <p><strong>What this can look like:</strong> clearer ownership, cleaner handoffs, fewer missed details, stronger follow-through, better lead flow visibility, and less time spent chasing the same issues.</p>
+              <p><strong>KPI examples:</strong> lead response time, lead conversion, proposal conversion, marketing activity review, missed handoffs, and completed action items.</p>
+            </div>
           </article>
 
           <article class="expect-outcome">
-            <span class="expect-number">02</span>
-            <h3>Better control over margin, time, and capacity.</h3>
-            <p>We identify where work is leaking time, money, energy, or accountability, then build practical structure around the areas that affect performance most.</p>
-            <p><strong>What this can look like:</strong> better project visibility, stronger change order capture, clearer estimate vs. actual awareness, reduced rework, cleaner prioritization, and a more realistic view of team capacity.</p>
-            <p><strong>KPI examples:</strong> gross margin by project, estimate vs. actual, change order capture rate, project timeline variance, rework hours, team utilization, invoice turnaround, AR aging.</p>
+            <button class="expect-toggle" type="button" aria-expanded="false" aria-controls="outcome-detail-2">
+              <span>
+                <span class="expect-number">02</span>
+                <span class="expect-title">Better control over margin, time, and capacity.</span>
+                <span class="expect-summary">We identify where work is leaking time, money, energy, or accountability, then build practical structure around the areas that affect performance most.</span>
+              </span>
+              <span class="expect-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="expect-detail" id="outcome-detail-2">
+              <p><strong>What this can look like:</strong> better project visibility, stronger change order capture, clearer estimate vs. actual awareness, reduced rework, cleaner prioritization, and a more realistic view of team capacity.</p>
+              <p><strong>KPI examples:</strong> gross margin by project, estimate vs. actual, change order capture rate, project timeline variance, rework hours, team utilization, invoice turnaround, AR aging.</p>
+            </div>
           </article>
 
           <article class="expect-outcome">
-            <span class="expect-number">03</span>
-            <h3>Less founder dependency.</h3>
-            <p>We strengthen decision flow, team ownership, and operating rhythm so the business is not constantly waiting on the founder to clarify, approve, solve, or move things forward.</p>
-            <p><strong>What this can look like:</strong> faster decisions, fewer bottlenecks, stronger accountability, clearer leadership visibility, improved client experience, and more space for strategic growth.</p>
-            <p><strong>KPI examples:</strong> decision turnaround time, number of approvals requiring the founder, open items waiting on leadership, escalations to owner, team-owned decisions, client satisfaction, sales pipeline visibility.</p>
+            <button class="expect-toggle" type="button" aria-expanded="false" aria-controls="outcome-detail-3">
+              <span>
+                <span class="expect-number">03</span>
+                <span class="expect-title">Less founder dependency.</span>
+                <span class="expect-summary">We strengthen decision flow, team ownership, and operating rhythm so the business is not constantly waiting on the founder to clarify, approve, solve, or move things forward.</span>
+              </span>
+              <span class="expect-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="expect-detail" id="outcome-detail-3">
+              <p><strong>What this can look like:</strong> faster decisions, fewer bottlenecks, stronger accountability, clearer leadership visibility, improved client experience, and more space for strategic growth.</p>
+              <p><strong>KPI examples:</strong> decision turnaround time, number of approvals requiring the founder, open items waiting on leadership, escalations to owner, team-owned decisions, client satisfaction, sales pipeline visibility.</p>
+            </div>
           </article>
         </div>
 
@@ -1695,6 +1753,7 @@
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
     const glowSections = document.querySelectorAll('.hero, .closing');
+    const outcomeToggles = document.querySelectorAll('.expect-toggle');
 
     if (siteHeader && menuToggle && mobileMenu) {
       menuToggle.addEventListener('click', () => {
@@ -1711,6 +1770,14 @@
         });
       });
     }
+
+    outcomeToggles.forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        const outcome = toggle.closest('.expect-outcome');
+        const isOpen = outcome.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
 
     const glowObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
