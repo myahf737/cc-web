@@ -202,6 +202,16 @@
       text-transform: uppercase;
     }
 
+    .brand-mark {
+      display: inline-block;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      background: currentColor;
+      -webkit-mask: url("CC-logo-deep-green.svg") center / 185% no-repeat;
+      mask: url("CC-logo-deep-green.svg") center / 185% no-repeat;
+    }
+
     .brand-name {
       display: flex;
       flex-direction: column;
@@ -1321,6 +1331,12 @@
 
       .brand {
         font-size: 12px;
+        gap: 9px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
       }
 
       .header-cta {
@@ -1446,6 +1462,7 @@
 <body>
   <header class="site-header" aria-label="Site header">
     <a class="brand" href="#top" aria-label="Conscious Command home">
+      <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-name">
         <span>Conscious</span>
         <span>Command</span>
