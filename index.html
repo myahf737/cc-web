@@ -1412,6 +1412,19 @@
         padding: 18px 0;
       }
 
+      .method-header,
+      .leap-diagram {
+        cursor: pointer;
+      }
+
+      .leap-steps {
+        display: none;
+      }
+
+      .method.is-open .leap-steps {
+        display: grid;
+      }
+
       .expect-outcomes {
         grid-template-columns: 1fr;
       }
@@ -1786,6 +1799,7 @@
     const siteHeader = document.querySelector('.site-header');
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const methodSection = document.querySelector('.method');
     const glowSections = document.querySelectorAll('.hero, .closing');
     const outcomeToggles = document.querySelectorAll('.expect-toggle');
 
@@ -1812,6 +1826,14 @@
         toggle.setAttribute('aria-expanded', String(isOpen));
       });
     });
+
+    if (methodSection) {
+      methodSection.querySelectorAll('.method-header, .leap-diagram').forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          methodSection.classList.toggle('is-open');
+        });
+      });
+    }
 
     const glowObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
